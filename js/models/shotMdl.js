@@ -6,59 +6,52 @@
         // :: ATRIBUTOS
 
         var model = {
-            shots: {}
+            shots: {},
+            shotSelecionado: {}
         };
 
         // :: MÉTODOS
 
         /**
-         * Lista o histórico de demandas do cliente
          * @access public
+         * @param {sinistro} numero do sinistro
          */
-        function listarShots( successCallback ) {
+        function listarShotPopulares( successCallback, finallyCallback ) {
 
-            var mensagemDeErro = 'Não foi possível carregar a lista de shots';
+            var token = 'b3cc92325f54afe8842b3971aad00d7048ae31e73685e574a9df910d92fe22b9';
 
-            var token = "b3cc92325f54afe8842b3971aad00d7048ae31e73685e574a9df910d92fe22b9";
+            $http.get( "https://api.dribbble.com/v1/shots/?access_token=" + token )
+                .success( function(  response ) {
 
-            var url = "https://api.dribbble.com/v1/shots/?access_token=" + token;           
-
-            $http.get( url )
-                .success( function( response ) {
-
-                    model.shots = response;
-                    successCallback && successCallback();
+                    successCallback && successCallback( response );
 
                 } )
-                .error( function( erro ) {
-                    console.log( erro );
-                } )
-                .finally( function() {
+                .error( function(){} )
+                .finally( function(){} );
+            }
 
-                } );
-        }
-
-
-        // :: EXPOSIÇÃO DE DADOS
+            // :: EXPOSIÇÃO DE DADOS
 
         /**
          * Exposição de dados para as controllers
          */
         return {
-            
-            // :: ENTIDADE
+            // :: ATRIBUTOS
             model: model,
 
             // :: MÉTODOS
-            listarShots: listarShots
-
+            listarShotPopulares: listarShotPopulares
         };
-    }
 
-    ShotMdl.$inject = [ "$http" ];
+       }
+
+
+
+
+    ShotMdl.$inject = [ '$http' ];
 
     angular
-        .module( "activities" )
-        .factory( "ShotMdl", ShotMdl );
+        .module( 'appshot' )
+        .factory( 'ShotMdl', ShotMdl );
 
-} )();
+})();

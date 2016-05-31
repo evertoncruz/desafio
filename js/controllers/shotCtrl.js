@@ -1,14 +1,62 @@
-function ShotCtrl( $scope, $http ) {
+( function() {
+    'use strict';
 
-    var token = "b3cc92325f54afe8842b3971aad00d7048ae31e73685e574a9df910d92fe22b9";
+    function ShotCtrl( $scope, ShotMdl  ) {
 
-    $http.get( "https://api.dribbble.com/v1/shots/?access_token=" + token )
-        .success( function( response ) {
+        // :: ATRIBUTOS
 
-            $scope.shots = response;
+        /**
+         * Camada com regras de View.
+         * @access public
+         */
+        var view = {
+            shots: {},
+            shotSelecionado: ShotMdl.model.shotSelecionado || {}
+        };
+
+        // :: MÉTODOS
+
+        /**
+         * @access public
+         */
+        function visualizarShot ( shot ) {
+
+            ShotMdl.model.shotSelecionado = shot;
+            window.location.href = 'shot.html';
+
+        }
+
+        function listarShotPopulares() {
+
+            ShotMdl.listarShotPopulares( function( response ) {
+
+                view.shots = response;
+
+            } );
+
+        }
+
+        listarShotPopulares();
+
+
+        console.log(ShotMdl.model);
+
+        /**
+         * Exposição de dados para as views
+         */
+        angular.extend( this, {
+            // :: VIEW
+            view: view,
+
+            // :: METODO
+            visualizarShot: visualizarShot,
 
         } );
+    }
 
-}
+    ShotCtrl.$inject = [ '$scope', 'ShotMdl' ];
 
-angular.module( "activities" ).controller( "ShotCtrl", ShotCtrl );
+    angular
+        .module( 'appshot' )
+        .controller( 'ShotCtrl', ShotCtrl );
+} )();

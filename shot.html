@@ -16,17 +16,14 @@
         <link rel="stylesheet" href="componentes\css\ngDialog\ngDialog.min.css">
 		<link rel="stylesheet" href="componentes\css\main.css">
 
+
+
+
     </head>
+
     <body ng-controller="ShotCtrl as ShotVM">
         <div class="col-md-12 col-sm-12 col-xs-12 main">
-            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 shot" >
-                <ul>
-                    <li ng-repeat="shot in ShotVM.view.shots">
-                        <img ng-src="{{ shot.images.normal }}" class="img-responsive" ng-click="ShotVM.visualizarShot( shot )"/>
-                    </li>
-                </ul>
-            </div>
+            {{ shotSelecionado }}
+         </div>
     </body>
 </html>
-
-
