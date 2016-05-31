@@ -1,0 +1,49 @@
+<html lang="pt-BR" ng-app="activities">
+    <head>        
+        
+        <script type="text/javascript" src="componentes\angular.min.js"></script>
+        <script type="text/javascript" src="componentes\jquery\jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="componentes\bootstrap\js\bootstrap.min.js"></script>
+        <script type="text/javascript" src="app.activities.js"></script>  
+        <script type="text/javascript" src="js\controllers\shotCtrl.js"></script>        
+        
+        <link rel="stylesheet" href="componentes\bootstrap\css\bootstrap.min.css">
+        
+
+              
+        
+    </head>    
+    <style type="text/css">
+    .shot {
+        color:#B000FF;
+        background-color: #F2F2F2;
+    }
+    .shot {
+        margin: 20px 5px 20px 5px;
+        
+    }
+    .shot ul li:first-child {
+        padding: 0px 0px 10px 0px;
+           
+    }
+    .shot ul li {
+        list-style-type: none;
+        padding: 10px 0px 0px 0px;   
+    }
+
+    </style>
+        
+    <body ng-controller="ShotCtrl">        
+        <div class="main">
+            <div class="shot" >
+                <ul>
+                    <li ng-repeat="shot in shots">
+                        <img ng-src="{{ shot.images.normal }}" class="img-responsive" />
+                    </li>
+                </ul>
+            </div>
+    </body>
+</html>
+
+
+ 
