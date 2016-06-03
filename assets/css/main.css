@@ -1,0 +1,58 @@
+body {
+	background-color: #F2F2F2;
+}
+.main {
+	padding: 50px 5px 5px 5px;
+}
+.imagem {
+	padding: 40px 10px 10px 10px;
+}
+
+.detalhe {
+	padding: 10px;
+}
+.imagem, .detalhe {
+	box-shadow: 0px 0px 5px #888;
+	background-color: #FFF;
+}
+
+.imagem ul, .detalhe ul {
+	padding-left: 0px;
+}
+.imagem ul li{
+	list-style-type: none;
+	padding: 15px 5px 0px 5px;
+}
+.imagem ul li img{
+	margin: 0 auto;
+	box-shadow: 0px 0px 5px #888;
+}
+.detalhe div:first-child {
+	position: relative;
+}
+
+.detalhe img{
+	margin: 0 auto;
+}
+.detalhe ul li {
+	list-style-type: none;
+}
+.descricao {
+	margin-top: 10px;
+}
+.descricao:last-child {
+	padding: 0;
+}
+.avatar {
+	height: 4em;
+	width: 4em;
+	border-radius: 50%;
+}
+.rodape {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: beige;
+}
+
+

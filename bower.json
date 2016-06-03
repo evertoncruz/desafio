@@ -1,0 +1,24 @@
+{
+  "name": "Desafio",
+  "description": "Desafio Concrete Solutions",
+  "main": "",
+  "authors": [
+    "Everton Cruz <exclusivodoeverton@hotmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.6",
+    "bower": "*",
+    "bootstrap": "latest"
+  }
+}

@@ -1,31 +1,23 @@
-<html lang="pt-BR" ng-app="appshot">
+<html lang="pt-BR">
     <head>
-
-        <script type="text/javascript" src="componentes\js\angular\angular.min.js"></script>
-        <script type="text/javascript" src="componentes\js\jquery\jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="componentes\js\bootstrap\bootstrap.min.js"></script>
-        <script type="text/javascript" src="componentes\js\ngDialog\ngDialog.min.js"></script>
-        <script type="text/javascript" src="app.shot.js"></script>
-
-        <script type="text/javascript" src="js\controllers\shotCtrl.js"></script>
-        <script type="text/javascript" src="js\models\shotMdl.js"></script>
-
-
-
-        <link rel="stylesheet" href="componentes\css\bootstrap\bootstrap.min.css">
-        <link rel="stylesheet" href="componentes\css\ngDialog\ngDialog.min.css">
-		<link rel="stylesheet" href="componentes\css\main.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
+		<link rel="stylesheet" href="assets\css\main.css">
 
     </head>
-    <body ng-controller="ShotCtrl as ShotVM">
-        <div class="col-md-12 col-sm-12 col-xs-12 main">
-            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 shot" >
-                <ul>
-                    <li ng-repeat="shot in ShotVM.view.shots">
-                        <img ng-src="{{ shot.images.normal }}" class="img-responsive" ng-click="ShotVM.visualizarShot( shot )"/>
-                    </li>
-                </ul>
-            </div>
+    <body ng-app="appImagem">
+
+        <div ng-view></div>
+
+        <script type="text/javascript" src="bower_components\angular\angular.min.js"></script>
+        <script type="text/javascript" src="bower_components\angular-route\angular-route.min.js"></script>
+        <script type="text/javascript" src="bower_components\jquery\dist\jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="app.imagem.js"></script>
+        <script type="text/javascript" src="js\controllers\imagemCtrl.js"></script>
+        <script type="text/javascript" src="js\models\imagemMdl.js"></script>
+
     </body>
 </html>
 
