@@ -13,11 +13,10 @@
         // :: MÉTODOS
 
         /**
-         * @access public
-         * @param {sinistro} numero do sinistro
+         * @access public         
          */
         function listarImagem( successCallback, finallyCallback ) {
-            if (model.imagens.length) {
+            if ( model.imagens.length ) {
                 return;
             }
 
@@ -25,12 +24,12 @@
 
             $http.get( "https://api.dribbble.com/v1/shots/?access_token=" + token )
                 .success( function(  response ) {
-                    angular.copy(response, model.imagens);
+                    angular.copy( response, model.imagens );
                 } )
-                .error( function(){
+                .error( function() {
                     // TODO: Avisar o usuário de q não foi possível carregar as fotos
                 } )
-                .finally( function(){
+                .finally( function() {
                     finallyCallback && finallyCallback();
                 } );
             }

@@ -1,4 +1,4 @@
-angular.module( "appImagem",  ['ngRoute'] )
+angular.module( 'appImagem',  [ 'ngRoute' ] )
     .config(
         function( $routeProvider  ) {
             'use strict';
