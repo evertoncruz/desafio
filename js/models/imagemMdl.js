@@ -27,7 +27,7 @@
                     angular.copy( response, model.imagens );
                 } )
                 .error( function() {
-                    // TODO: Avisar o usuário de q não foi possível carregar as fotos
+                    alert( 'Não foi possível carregar a relação de imagens. Tente novamente mais tarde!' );
                 } )
                 .finally( function() {
                     finallyCallback && finallyCallback();
